@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Кошик</title>
+
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/style.css"> <!-- якщо в тебе є базові стилі -->
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <img class="logo" src="./image/logo.jpg" alt="Meow&Bark">
+
+    <nav>
+      <ul class="nav list">
+        <li><a href="./index.html" class="nav-link">Головна</a></li>
+        <li><a href="./catalog.html" class="nav-link">Каталог</a></li>
+        <li><a href="#contacts" class="nav-link">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <form class="header-search" onsubmit="return false;">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Пошук товарів..."
+          autocomplete="off"
+        />
+        <span class="search-icon">🔍</span>
+      </form>
+
+      <a href="./registration.html" class="header-auth-link">
+        Увійти / Реєстрація
+      </a>
+
+      <div class="header-cart">
+        <a href="./cart.html" class="cart-link">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Кошик</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+
+        <div class="cart-dropdown" id="cart-dropdown">
+          <div class="cart-dropdown-inner">
+            <div id="cart-dropdown-items" class="cart-dropdown-items"></div>
+
+            <div class="cart-dropdown-footer">
+              <div class="cart-dropdown-total">
+                Разом: <span id="cart-dropdown-total">0 грн</span>
+              </div>
+              <a href="cart.html" class="cart-dropdown-link">
+                Перейти в кошик
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main class="cart-page">
+  <h1 class="cart-title">Ваш кошик</h1>
+
+  <div class="cart-container">
+
+    <!-- Сюди JS підставить товари -->
+    <div id="cart-items" class="cart-items">
+        <div class="cart-item-controls">
+        <div class="cart-qty">
+            <button class="cart-qty-btn" data-cart-minus>-</button>
+            <span class="cart-qty-value">1</span>
+            <button class="cart-qty-btn" data-cart-plus>+</button>
+        </div>
+
+        <button class="cart-remove-btn" data-cart-remove>
+            Видалити
+        </button>
+        </div>
+
+    </div>
+
+    <div class="cart-summary">
+  <h2>Разом:</h2>
+  <p class="summary-line">
+    Товарів: <span id="summary-count">0</span>
+  </p>
+  <p class="summary-line">
+    Сума: <span id="summary-total">0.00 грн</span>
+  </p>
+
+  <button class="cart-buy-btn" id="cart-checkout-btn">
+    Оформити замовлення
+  </button>
+
+  <!-- Форма оформлення замовлення -->
+  <form class="checkout-form" id="checkout-form" hidden>
+    <h3 class="checkout-title">Дані для доставки</h3>
+
+    <div class="checkout-field">
+      <label for="checkout-name">Ім’я та прізвище</label>
+      <input type="text" id="checkout-name" name="name" required />
+    </div>
+
+    <div class="checkout-two-cols">
+      <div class="checkout-field">
+        <label for="checkout-phone">Телефон</label>
+        <input type="tel" id="checkout-phone" name="phone" required />
+      </div>
+      <div class="checkout-field">
+        <label for="checkout-email">Email</label>
+        <input type="email" id="checkout-email" name="email" required />
+      </div>
+    </div>
+
+    <div class="checkout-field">
+      <label for="checkout-city">Місто</label>
+      <input type="text" id="checkout-city" name="city" required />
+    </div>
+
+    <div class="checkout-field">
+      <label for="checkout-address">Адреса / відділення</label>
+      <input type="text" id="checkout-address" name="address" required />
+    </div>
+
+    <div class="checkout-field">
+      <label for="checkout-comment">Коментар до замовлення (опціонально)</label>
+      <textarea id="checkout-comment" name="comment" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="checkout-submit-btn">
+      Підтвердити замовлення
+    </button>
+
+    <p class="checkout-note">
+      Після підтвердження з вами зв’яжеться менеджер для уточнення деталей 💛
+    </p>
+
+    <p class="checkout-success" id="checkout-success" hidden>
+      🎉 Замовлення оформлено! Дякуємо, що обираєте Meow&Bark.
+    </p>
+  </form>
+</div>
+
+
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+<footer class="site-footer" id="contacts">
+    <div class="container footer-container">
+
+        <div class="footer-logo-block">
+        <img src="./image/logo.jpg" alt="Meow&Bark" class="footer-logo">
+        <p class="footer-brand">Meow&Bark</p>
+        </div>
+
+        <nav class="footer-nav">
+        <ul>
+            <li><a href="./index.html">Головна</a></li>
+            <li><a href="./catalog.html">Каталог</a></li>
+        </ul>
+        </nav>
+
+        <div class="footer-contacts">
+        <p><strong>Телефон:</strong> <a href="tel:+380987636238">+380 98 763 6238</a></p>
+        <p><strong>Email:</strong> 
+            <a href="mailto:bt2311@tec.ukr.education">bt2311@tec.ukr.education</a>
+        </p>
+        </div>
+    </div>
+    <p class="footer-copy">© 2025 Meow&Bark</p>
+    </footer>
+</html>

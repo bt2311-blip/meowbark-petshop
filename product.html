@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/catalog.css" />
+    <link rel="stylesheet" href="./css/product.css" />
+    <title>Картка товару — Meow&Bark</title>
+  </head>
+  <body>
+   
+   
+ <header class="header">
+  <div class="container header-container">
+    <img class="logo" src="./image/logo.jpg" alt="Meow&Bark">
+
+    <nav>
+      <ul class="nav list">
+        <li><a href="./index.html" class="nav-link current">Головна</a></li>
+        <li><a href="./catalog.html" class="nav-link">Каталог</a></li>
+        <li><a href="#contacts" class="nav-link">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <form class="header-search" onsubmit="return false;">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Пошук товарів..."
+          autocomplete="off"
+        />
+        <span class="search-icon">🔍</span>
+      </form>
+
+      <a href="./registration.html" class="header-auth-link">
+        Увійти / Реєстрація
+      </a>
+
+      <div class="header-cart">
+        <a href="./cart.html" class="cart-link">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Кошик</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+
+        <div class="cart-dropdown" id="cart-dropdown">
+          <div class="cart-dropdown-inner">
+            <div id="cart-dropdown-items" class="cart-dropdown-items"></div>
+
+            <div class="cart-dropdown-footer">
+              <div class="cart-dropdown-total">
+                Разом: <span id="cart-dropdown-total">0 грн</span>
+              </div>
+              <a href="cart.html" class="cart-dropdown-link">
+                Перейти в кошик
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <section class="product-page">
+        <div class="container">
+          <button
+            class="product-back"
+            type="button"
+            onclick="window.history.back()">← Повернутися назад</button>
+          <!-- Основний блок товару -->
+          <article
+            class="product-page-card"
+            id="product-card"
+            data-product="1"
+            data-id=""
+            data-name=""
+            data-price=""
+            data-image="">
+            <div class="product-layout">
+              <div class="product-page-left">
+                <div class="product-page-image">
+                  <img
+                    id="product-image"
+                    src=""
+                    alt="" /></div></div>
+              <div class="product-page-right">
+                <div class="product-page-tags">
+                  <span
+                    class="product-tag"
+                    id="product-category-tag"></span>
+                  <span
+                    class="product-tag product-tag--animal"
+                    id="product-animal-tag"></span>
+                </div>
+                <h1 class="product-page-title" id="product-name">...</h1>
+                <div
+                  class="product-page-rating"
+                  id="product-rating-summary"
+                  hidden></div>
+                <p class="product-page-price">
+                  <span id="product-price"></span> грн</p>
+                <button
+                  class="product-buy-btn product-buy-btn--large"
+                  type="button"
+                  data-add-to-cart>Додати в кошик</button>
+                <p class="product-note">Доставка по Україні, оплата при отриманні 🐶🐱</p>
+              </div></div></article>
+          <p class="product-not-found" id="product-not-found" hidden>Ой, такого товару не знайдено 😿</p>
+        <section class="product-description">
+        <h2>Опис товару</h2>
+        <p id="product-description"></p>
+        </section>
+
+          <!-- Відгуки -->
+          <section class="reviews" id="reviews-section">
+            <div class="reviews-header">
+              <h2>Відгуки</h2>
+              <p class="reviews-summary" id="reviews-summary"></p>
+            </div>
+
+            <form class="review-form" id="review-form">
+              <h3>Залишити відгук</h3>
+
+              <div class="review-form-row">
+                <label class="review-label">
+                  Ваше ім’я
+                  <input
+                    type="text"
+                    name="author"
+                    required
+                    placeholder="Наприклад, Анастасія"
+                  />
+                </label>
+
+                <label class="review-label">
+                  Оцінка
+                  <select name="rating" required>
+                    <option value="5" selected>5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="review-label">
+                Коментар
+                <textarea
+                  name="text"
+                  rows="4"
+                  required
+                  placeholder="Поділися враженнями про товар :)"
+                ></textarea>
+              </label>
+
+              <p class="review-hint">
+                Відгуки зберігаються тільки на цьому пристрої
+                (localStorage).
+              </p>
+
+              <button class="review-submit-btn" type="submit">
+                Надіслати відгук
+              </button>
+            </form>
+
+            <div class="reviews-list" id="reviews-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacts">
+    <div class="container footer-container">
+
+        <div class="footer-logo-block">
+        <img src="./image/logo.jpg" alt="Meow&Bark" class="footer-logo">
+        <p class="footer-brand">Meow&Bark</p>
+        </div>
+
+        <nav class="footer-nav">
+        <ul>
+            <li><a href="./index.html">Головна</a></li>
+            <li><a href="./catalog.html">Каталог</a></li>
+        </ul>
+        </nav>
+
+        <div class="footer-contacts">
+        <p><strong>Телефон:</strong> <a href="tel:+380987636238">+380 98 763 6238</a></p>
+        <p><strong>Email:</strong> 
+            <a href="mailto:bt2311@tec.ukr.education">bt2311@tec.ukr.education</a>
+        </p>
+        </div>
+    </div>
+    <p class="footer-copy">© 2025 Meow&Bark</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+  </body>
+
+</html>
