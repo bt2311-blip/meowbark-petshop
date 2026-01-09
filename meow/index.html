@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Meow&Bark</title>
+</head>
+<body>
+    
+    <header class="header">
+    <div class="container header-container">
+        <img class="logo" src="./image/logo.jpg" alt="Meow&Bark">
+        <nav>
+        <ul class="nav list">
+            <li><a href="./index.html" class="nav-link current">Головна</a></li>
+            <li><a href="./catalog.html" class="nav-link">Каталог</a></li>
+            <li><a href="#contacts" class="nav-link">Контакти</a></li>
+        </ul>
+        </nav>
+        <div class="header-actions">
+        <form class="header-search" onsubmit="return false;">
+            <input
+            type="text"
+            id="search-input"
+            placeholder="Пошук товарів..."
+            autocomplete="off"/>
+            <span class="search-icon">🔍</span>
+        </form>
+        <a href="./registration.html" class="header-auth-link">Увійти / Реєстрація</a>
+        <div class="header-cart">
+            <a href="./cart.html" class="cart-link">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-label">Кошик</span>
+            <span class="cart-count" id="cart-count">0</span>
+            </a>
+            <div class="cart-dropdown" id="cart-dropdown">
+            <div class="cart-dropdown-inner">
+                <div id="cart-dropdown-items" class="cart-dropdown-items"></div>
+                <div class="cart-dropdown-footer">
+                <div class="cart-dropdown-total">
+                    Разом: <span id="cart-dropdown-total">0 грн</span>
+                </div>
+                <a href="cart.html" class="cart-dropdown-link">Перейти в кошик</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </header>
+
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-div">
+                <div class="hero-div-text">
+                    <h1 class="hero-title">Любов до тварин у кожній покупці</h1>
+                    <p class="hero-p">Від смаколиків настрій піднімається не лише в тебе, порадуй друга!</p>
+                    <a href="./catalog.html" class="hero-btn">Замовити товари</a>
+                </div>
+                <div class="hero-div-img">
+                    <img class="shadow-dog" src="./image/shadow-dog.png" alt="shadow">
+                    <img class="dog" src="./image/dog.png" alt="dog">
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="categories" id="catalog">
+        <div class="container">
+            <h2 class="categories-title">Категорії</h2>
+
+            <ul class="categories-list">
+            <li>
+                <a href="./catalog.html?category=food" class="category-card">
+                <div class="category-image">
+                    <img src="./image/cat-food.jpg" alt="Корм">
+                </div>
+                <div class="category-box">
+                    <p class="category-name">Корм ></p>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="./catalog.html?category=toys" class="category-card">
+                <div class="category-image">
+                    <img src="./image/dog-toy.jpg" alt="Іграшки">
+                </div>
+                <div class="category-box">
+                    <p class="category-name">Іграшки ></p>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="./catalog.html?category=accessories" class="category-card">
+                <div class="category-image">
+                    <img src="./image/dog-accessory.jpg" alt="Аксесуари">
+                </div>
+                <div class="category-box">
+                    <p class="category-name">Аксесуари ></p>
+                </div>
+                </a>
+            </li>
+            </ul>
+        </div>
+        </section>
+
+
+
+
+
+ <section class="favorites-section">
+  <div class="favorites-inner">
+    <div class="favorites-header">
+      <h2 class="favorites-title">Фаворити покупців</h2>
+      <p class="favorites-subtitle">
+        Найпопулярніші товари нашого зоомагазину. Повний асортимент шукай у каталозі.
+      </p>
+      <a href="./catalog.html" class="favorites-link">Переглянути всі товари</a>
+    </div>
+    <div class="favorites-grid">
+      <!-- Фаворит 1 -->
+      <article class="favorite-card"
+               data-product
+               data-id="dog-toy-1"
+               data-name="Pet Fun іграшка для собак м'ячик 8 см - помаранчевий"
+               data-price="179"
+               data-image="./image/ball.png">
+        <div class="favorite-image">
+          <img src="./image/ball.png"
+               alt="Pet Fun іграшка для собак м'ячик 8 см - помаранчевий">
+        </div>
+        <p class="favorite-name">
+          Pet Fun іграшка для собак м'ячик 8 см - помаранчевий
+        </p>
+        <p class="favorite-tags">
+          <span class="favorite-tag">Іграшки</span>
+          <span class="favorite-tag favorite-tag--animal">Для собак</span>
+        </p>
+        <p class="favorite-price">179.00 грн</p>
+        <button class="favorite-button" type="button" data-add-to-cart>
+          Купити
+        </button>
+      </article>
+      <!-- Фаворит 2  -->
+      <article class="favorite-card"
+               data-product
+               data-id="bandana-1"
+               data-name="Pet Fun бандана для котів XS-S"
+               data-price="90.00"
+               data-image="./image/bandana.png">
+        <div class="favorite-image">
+          <img src="./image/bandana.png"
+               alt="Pet Fun бандана для котів XS-S">
+        </div>
+        <p class="favorite-name">
+          Pet Fun бандана для котів XS-S
+        </p>
+        <p class="favorite-tags">
+          <span class="favorite-tag">Аксесуари</span>
+          <span class="favorite-tag favorite-tag--animal">Для котів</span>
+        </p>
+        <p class="favorite-price">90.00 грн</p>
+        <button class="favorite-button" type="button" data-add-to-cart>
+          Купити
+        </button>
+      </article>
+      <!-- Фаворит 3 -->
+      <article class="favorite-card"
+               data-product
+               data-id="backpack-1"
+               data-name="Pet Fun рюкзак-переноска для собак 34х28х41 см"
+               data-price="2499.00"
+               data-image="./image/backpack.png">
+        <div class="favorite-image">
+          <img src="./image/backpack.png"
+               alt="Pet Fun рюкзак-переноска для собак 34х28х41 см">
+        </div>
+        <p class="favorite-name">
+          Pet Fun рюкзак-переноска для собак 34х28х41 см
+        </p>
+        <p class="favorite-tags">
+          <span class="favorite-tag">Аксесуари</span>
+          <span class="favorite-tag favorite-tag--animal">Для собак</span>
+        </p>
+        <p class="favorite-price">2 499.00 грн</p>
+        <button class="favorite-button" type="button" data-add-to-cart>
+          Купити
+        </button>
+      </article>
+      <!-- Фаворит 4  -->
+      <article class="favorite-card"
+               data-product
+               data-id="bird-toy-1"
+               data-name="Іграшка для котів Pet Fun Пташка блакитна 8 см"
+               data-price="119.00"
+               data-image="./image/bird-toy.png">
+        <div class="favorite-image">
+          <img src="./image/bird-toy.png"
+               alt="Іграшка для котів Pet Fun Пташка блакитна 8 см">
+        </div>
+        <p class="favorite-name">
+          Іграшка для котів Pet Fun Пташка блакитна 8 см
+        </p>
+        <p class="favorite-tags">
+          <span class="favorite-tag">Іграшки</span>
+          <span class="favorite-tag favorite-tag--animal">Для котів</span>
+        </p>
+        <p class="favorite-price">119.00 грн</p>
+        <button class="favorite-button" type="button" data-add-to-cart>
+          Купити
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+        <section class="about-section" id="about">
+            <div class="container about-container">
+            <div class="banner-div">
+                <img src="./image/banner.jpg" class="banner-size" alt="banner ad">
+            </div>
+            <div class="about-div">
+                <h1 class="about-title">Про магазин</h1>
+                <p class="about-p">     У світі, де домашні улюбленці давно стали повноправними членами родини, важливо 
+                    знаходити місця, де про них дбають так само відповідально, як і їхні власники. Саме тому 
+                    для багатьох Meow&Bark перетворився на магазин, де якість і турбота відчуваються у 
+                    кожній деталі.</p>
+                <p class="about-p">   Асортимент Meow&Bark продуманий до дрібниць: корми різних категорій, ласощі, 
+                    екологічні наповнювачі, іграшки, аксесуари та товари для догляду. Усе підібрано так, щоб 
+                    власник міг знайти оптимальне рішення для будь-яких потреб свого улюбленця. Тут немає 
+                    випадкових брендів — лише перевірена, безпечна й сучасна продукція.</p>
+                <p class="about-p">     Покупці часто помічають, що Meow&Bark вирізняється підходом, де важлива не кількість 
+                    товарів, а їхня якість та користь. Акуратна комплектація замовлень, швидка доставка, 
+                    уважність до деталей і чесні рекомендації створюють відчуття партнерства: ніби магазин 
+                    піклується про тварину разом із вами.</p>
+                <p class="about-p">     Окрема перевага — постійне оновлення новинок зооринку. У Meow&Bark завжди можна 
+                    знайти інноваційні корми, функціональні іграшки, стильні аксесуари й сучасні товари, які 
+                    роблять життя тварин комфортнішим і яскравішим.</p>
+                <p class="about-p">      Зручний інтерфейс, продумані описи та вигідні пропозиції роблять покупки простими й 
+                    приємними. Тож Meow&Bark — це місце, де турбота, якість і професійний підхід 
+                    поєднуються так, що до нього хочеться повернутися знову.</p>
+            </div>
+            </div>
+        </section>
+    </main>
+
+        <script src="js/main.js"></script>
+        <script>
+        document.addEventListener("click", (e) => {
+            const btn = e.target.closest("[data-link-category]");
+            if (!btn) return;
+            const cat = btn.dataset.linkCategory;
+            window.location.href = `catalog.html?category=${encodeURIComponent(cat)}`;
+        });
+        </script>
+
+
+    <footer class="site-footer" id="contacts">
+    <div class="container footer-container">
+        <div class="footer-logo-block">
+        <img src="./image/logo.jpg" alt="Meow&Bark" class="footer-logo">
+        <p class="footer-brand">Meow&Bark</p>
+        </div>
+        <nav class="footer-nav">
+        <ul>
+            <li><a href="./index.html">Головна</a></li>
+            <li><a href="./catalog.html">Каталог</a></li>
+        </ul>
+        </nav>
+        <div class="footer-contacts">
+        <p><strong>Телефон:</strong> <a href="tel:+380987636238">+380 98 763 6238</a></p>
+        <p><strong>Email:</strong> 
+            <a href="mailto:bt2311@tec.ukr.education">bt2311@tec.ukr.education</a>
+        </p>
+        </div>
+    </div>
+    <p class="footer-copy">© 2025 Meow&Bark</p>
+    </footer>
+
+</body>
+</html>

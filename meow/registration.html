@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <title>Реєстрація — Meow&Bark</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/auth.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <img class="logo" src="./image/logo.jpg" alt="Meow&Bark">
+
+    <nav>
+      <ul class="nav list">
+        <li><a href="./index.html" class="nav-link">Головна</a></li>
+        <li><a href="./catalog.html" class="nav-link">Каталог</a></li>
+        <li><a href="#contacts" class="nav-link">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <form class="header-search" onsubmit="return false;">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Пошук товарів..."
+          autocomplete="off"
+        />
+        <span class="search-icon">🔍</span>
+      </form>
+
+      <a href="./registration.html" class="header-auth-link">
+        Увійти / Реєстрація
+      </a>
+
+      <div class="header-cart">
+        <a href="./cart.html" class="cart-link">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Кошик</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+
+        <div class="cart-dropdown" id="cart-dropdown">
+          <div class="cart-dropdown-inner">
+            <div id="cart-dropdown-items" class="cart-dropdown-items"></div>
+
+            <div class="cart-dropdown-footer">
+              <div class="cart-dropdown-total">
+                Разом: <span id="cart-dropdown-total">0 грн</span>
+              </div>
+              <a href="cart.html" class="cart-dropdown-link">
+                Перейти в кошик
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main class="auth-page">
+    <div class="container auth-container">
+      <section class="auth-card">
+        <h1 class="auth-title">Реєстрація</h1>
+        <p class="auth-subtitle">
+          Створіть акаунт, щоб зберігати дані для доставки та швидко оформляти замовлення.
+        </p>
+         
+        <form id="registration-form" class="auth-form" novalidate>
+  <div class="auth-field">
+    <label for="fullName">Ім’я та прізвище</label>
+    <input
+      type="text"
+      id="fullName"
+      name="fullName"
+      required
+    />
+    <p class="auth-error" data-error-for="fullName"></p>
+  </div>
+
+  <div class="auth-field auth-field-row">
+    <div>
+      <label for="phone">Телефон</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+      />
+      <p class="auth-error" data-error-for="phone"></p>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+      />
+      <p class="auth-error" data-error-for="email"></p>
+    </div>
+  </div>
+
+  <div class="auth-field">
+    <label for="password">Пароль</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      minlength="6"
+    />
+    <p class="auth-error" data-error-for="password"></p>
+  </div>
+
+  <div class="auth-field">
+    <label for="passwordConfirm">Підтвердження паролю</label>
+    <input
+      type="password"
+      id="passwordConfirm"
+      name="passwordConfirm"
+      required
+    />
+    <p class="auth-error" data-error-for="passwordConfirm"></p>
+  </div>
+
+  <button type="submit" class="auth-submit-btn">
+    Зареєструватися
+  </button>
+
+  <p class="auth-success" id="auth-success" hidden>
+    Дані збережено, дякуємо за реєстрацію! 💚
+  </p>
+</form>
+
+      </section>
+    </div>
+  </main>
+
+<footer class="site-footer" id="contacts">
+    <div class="container footer-container">
+
+        <div class="footer-logo-block">
+        <img src="./image/logo.jpg" alt="Meow&Bark" class="footer-logo">
+        <p class="footer-brand">Meow&Bark</p>
+        </div>
+
+        <nav class="footer-nav">
+        <ul>
+            <li><a href="./index.html">Головна</a></li>
+            <li><a href="./catalog.html">Каталог</a></li>
+        </ul>
+        </nav>
+
+        <div class="footer-contacts">
+        <p><strong>Телефон:</strong> <a href="tel:+380987636238">+380 98 763 6238</a></p>
+        <p><strong>Email:</strong> 
+            <a href="mailto:bt2311@tec.ukr.education">bt2311@tec.ukr.education</a>
+        </p>
+        </div>
+    </div>
+    <p class="footer-copy">© 2025 Meow&Bark</p>
+    </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Каталог — Meow&Bark</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/catalog.css" />
+  </head>
+
+  <body>
+
+   <header class="header">
+  <div class="container header-container">
+    <img class="logo" src="./image/logo.jpg" alt="Meow&Bark">
+
+    <nav>
+      <ul class="nav list">
+        <li><a href="./index.html" class="nav-link">Головна</a></li>
+        <li><a href="./catalog.html" class="nav-link current">Каталог</a></li>
+        <li><a href="#contacts" class="nav-link">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <form class="header-search" onsubmit="return false;">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Пошук товарів..."
+          autocomplete="off"
+        />
+        <span class="search-icon">🔍</span>
+      </form>
+
+      <a href="./registration.html" class="header-auth-link">
+        Увійти / Реєстрація
+      </a>
+
+      <div class="header-cart">
+        <a href="./cart.html" class="cart-link">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Кошик</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+
+        <div class="cart-dropdown" id="cart-dropdown">
+          <div class="cart-dropdown-inner">
+            <div id="cart-dropdown-items" class="cart-dropdown-items"></div>
+
+            <div class="cart-dropdown-footer">
+              <div class="cart-dropdown-total">
+                Разом: <span id="cart-dropdown-total">0 грн</span>
+              </div>
+              <a href="cart.html" class="cart-dropdown-link">
+                Перейти в кошик
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <!-- КАТАЛОГ -->
+    <main>
+      <section class="catalog-page">
+        <div class="container catalog-layout">
+          <!-- ФІЛЬТРИ ЗЛІВА -->
+          <aside class="catalog-filters">
+            <h2 class="filters-title">Фільтри</h2>
+
+            <div class="filter-group">
+              <h3>Категорія</h3>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="food"
+                  checked
+                />
+                <span>Корм</span>
+              </label>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="toys"
+                  checked
+                />
+                <span>Іграшки</span>
+              </label>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="accessories"
+                  checked
+                />
+                <span>Аксесуари</span>
+              </label>
+            </div>
+
+            <div class="filter-group">
+              <h3>Для кого</h3>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="animal"
+                  value="dog"
+                  checked
+                />
+                <span>Для собак</span>
+              </label>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="animal"
+                  value="cat"
+                  checked
+                />
+                <span>Для котів</span>
+              </label>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="animal"
+                  value="bird"
+                  checked
+                />
+                <span>Для птахів</span>
+              </label>
+              <label class="filter-checkbox">
+                <input
+                  type="checkbox"
+                  name="animal"
+                  value="rodent"
+                  checked
+                />
+                <span>Для гризунів</span>
+              </label>
+            </div>
+
+            <div class="filter-group">
+              <h3>Ціна, грн</h3>
+              <div class="price-inputs">
+                <div class="price-field">
+                  <label for="price-min">від</label>
+                  <input
+                    type="number"
+                    id="price-min"
+                    min="0"
+                    value="0"
+                  />
+                </div>
+                <div class="price-field">
+                  <label for="price-max">до</label>
+                  <input
+                    type="number"
+                    id="price-max"
+                    min="0"
+                    value="0"
+                  />
+                </div>
+              </div>
+              <div class="price-range">
+                <input
+                  type="range"
+                  id="price-range"
+                  min="0"
+                  max="10000"
+                  step="1"
+                  value="10000"
+                />
+                <span id="price-range-value">до 10000</span>
+              </div>
+            </div>
+
+            <button
+              class="reset-filters-btn"
+              id="reset-filters"
+              type="button"
+            >
+              Скинути фільтри
+            </button>
+          </aside>
+
+          <!-- ТОВАРИ -->
+          <section class="catalog-content">
+            <div class="catalog-header">
+              <h1 class="catalog-title">Каталог товарів</h1>
+              <span
+                class="catalog-count"
+                id="products-count"
+              ></span>
+            </div>
+
+            <div
+              class="products-grid"
+              id="products-grid"
+            ></div>
+
+            <p class="no-results" id="no-results" hidden>
+              За обраними фільтрами товарів не знайдено 😿
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/catalog.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-container">
+
+        <div class="footer-logo-block">
+        <img src="./image/logo.jpg" alt="Meow&Bark" class="footer-logo">
+        <p class="footer-brand">Meow&Bark</p>
+        </div>
+
+        <nav class="footer-nav">
+        <ul>
+            <li><a href="./index.html">Головна</a></li>
+            <li><a href="./catalog.html">Каталог</a></li>
+        </ul>
+        </nav>
+
+        <div class="footer-contacts">
+        <p><strong>Телефон:</strong> <a href="tel:+380987636238">+380 98 763 6238</a></p>
+        <p><strong>Email:</strong> 
+            <a href="mailto:bt2311@tec.ukr.education">bt2311@tec.ukr.education</a>
+        </p>
+        </div>
+    </div>
+    <p class="footer-copy">© 2025 Meow&Bark</p>
+    </footer>
+</html>
